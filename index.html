@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Responsive Navbar</title>
+	<style type="text/css">
+		* {
+			box-sizing: border-box;
+			margin: 0;
+			padding: 0;
+		}
+
+		body {
+			max-width: 100%;
+			font-family: Arial, sans-serif;
+		}
+
+
+		nav {
+			width: 100%;
+			border: 2px solid black;
+		}
+
+		nav ul{
+			display: flex;
+			justify-content: space-between;
+			list-style-type: none;
+		}	
+
+		nav li:first-of-type, nav li:nth-child(2){
+			display: none; 
+		}
+
+		nav li{
+			padding: 0.5rem;
+			cursor: pointer;
+		}
+
+		@media screen and (max-width: 800px){
+			/*Acá comienza la magia*/
+			nav ul {
+				flex-direction: column;
+			}
+
+			nav:not(:target) li:first-of-type{
+				display: block;
+			}
+			
+			nav:not(:target) li{
+				display: none;
+			}
+			
+			nav:target li{
+				display: block;
+			}
+			
+			nav:target li:first-of-type{
+				display: none;
+			}
+			/*Acá termina la magia*/
+		}
+	</style>
+</head>
+<body>
+	<nav id="menu">
+		<div>
+			<ul>
+				<li><a title="MENU" href = "#menu">&#9776;</a></li>
+				<li><a title="CLOSE MENU" href = "#">x</a></li>
+				<li><a  href="#">LINK</a></li>
+				<li><a href="#">LINK</a></li>
+				<li><a href="#">LINK</a></li>
+				<li><a href="#">LINK</a></li>		
+			</ul>
+		</div>
+	</nav>
+</body>
+</html>
